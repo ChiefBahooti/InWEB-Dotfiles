@@ -1,0 +1,27 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	dns1.inwebprofessionals.vmnet. admin.inwebprofessionals.vmnet. (
+			      6		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+; dns servers - NS records
+	IN	NS	dns1.inwebprofessionals.vmnet.
+	IN	NS	dns2.inwebprofessionals.vmnet.
+
+; dns servers - A records
+dns1.inwebprofessionals.vmnet.	IN	A	192.168.211.31
+dns2.inwebprofessionals.vmnet.	IN	A	192.168.211.32
+
+; 192.168.211.0/24 - A records
+rtr.inwebprofessionals.vmnet.	IN	A	192.168.211.1
+git.inwebprofessionals.vmnet.	IN	A	192.168.211.20
+web.inwebprofessionals.vmnet.	IN	A	192.168.211.20
+files.inwebprofessionals.vmnet.	IN	A	192.168.211.20
+inwebprofessionals.vmnet	IN	A	192.168.211.20
+
+
+; 192.168.212.0/24 - A records
