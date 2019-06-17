@@ -1,0 +1,25 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "inwebprofessionals.vmnet" {
+	type slave;
+	file "slaves/db.inwebprofessionals.vmnet";
+	masters { 192.168.211.31; }; # NS1 - Private IP
+};
+
+zone "211.168.192.in-addr.arpa" {
+	type slave;
+	file "slaves/db.211.168.192";
+	masters { 192.168.211.31; }; # NS1 - Private IP
+};
+
+zone "212.168.192.in-addr.arpa" {
+	type slave;
+	file "slaves/db.212.168.192";
+	masters { 192.168.211.31; }; # NS1 - Private IP
+};
